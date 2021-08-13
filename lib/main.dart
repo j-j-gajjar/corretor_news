@@ -20,14 +20,12 @@ class MyApp extends StatelessWidget {
           ResponsiveBreakpoint.autoScale(450, name: MOBILE),
           ResponsiveBreakpoint.autoScale(800, name: TABLET),
           ResponsiveBreakpoint.autoScale(1000, name: TABLET),
-          ResponsiveBreakpoint.autoScale(1200, name: DESKTOP),
+          ResponsiveBreakpoint.resize(1200, name: DESKTOP),
           ResponsiveBreakpoint.autoScale(2460, name: "4K"),
         ],
         // background: Container(color: kBgLightColor),
       ),
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
+      // theme: ThemeData(),
       home: HomePage(),
     );
   }

@@ -1,8 +1,9 @@
 import 'package:corretor_news/components/card.dart';
+import 'package:corretor_news/theme/app_texts.dart';
 import 'package:flutter/material.dart';
 
 Widget cardCoin(BuildContext context,
-    {String? moeda, valor, totalCrypto, double? currentTime, String? iconUrl}) {
+    {String? moeda, valor, double? currentTime, String? pngSrc}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 5),
     child: card(
@@ -20,8 +21,7 @@ Widget cardCoin(BuildContext context,
                   children: [
                     Text(
                       '$moeda',
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+                      style: textTheme.headline2,
                     ),
                     SizedBox(width: 10),
                   ],
@@ -68,11 +68,15 @@ Widget cardCoin(BuildContext context,
                 //   '$iconUrl',
                 // width: 50,
                 // ),
-                Icon(
-                  Icons.monetization_on,
-                  color: Colors.black.withOpacity(0.1),
-                  size: 90.0,
+                Image(
+                  image: AssetImage(pngSrc!),
+                  width: 60,
                 ),
+                // Icon(required this.pngSrc,
+                //   Icons.monetization_on,
+                //   color: Colors.black.withOpacity(0.1),
+                //   size: 90.0,
+                // ),
               ],
             ),
 

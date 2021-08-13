@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // Colors
 const kTextColor = Color(0xFF0D1333);
@@ -24,6 +25,7 @@ const kHeadingextStyle = TextStyle(
 );
 
 const ValueTextStyle = TextStyle(
+  fontFamily: 'Montserrat',
   fontSize: 80,
   letterSpacing: -2.5,
   color: kTealColor,

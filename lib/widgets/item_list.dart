@@ -12,13 +12,11 @@ class ItemList extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        
         children: <Widget>[
-          
           ItemCard(
-              svgSrc: "assets/icons/burger_beer.svg",
-              title: "Burger & Beer",
-              subtitle: "MacDonald's",
+              pngSrc: ("assets/logos/bitrix24.png"),
+              title: "Bitrix24",
+              subtitle: "2 Meses Grátis",
               press: () {}
               //   Navigator.push(
               //     context,
@@ -31,23 +29,32 @@ class ItemList extends StatelessWidget {
               // },
               ),
           ItemCard(
-            svgSrc: "assets/icons/chinese_noodles.svg",
-            title: "Chinese & Noodles",
-            subtitle: "Wendys",
+            pngSrc: ("assets/logos/bling.png"),
+            title: "Bling",
+            subtitle: "O ERP pensado no Corretor de Imóveis",
             press: () {},
           ),
           ItemCard(
-            svgSrc: "assets/icons/burger_beer.svg",
-            title: "Burger & Beer",
-            subtitle: "MacDonald's",
+            pngSrc: ("assets/logos/leadlovers.png"),
+            title: "Leadlovers",
+            subtitle: "Estratégia e automação de E-mail Marketing",
             press: () {},
           ),
           ItemCard(
-            svgSrc: "assets/icons/burger_beer.svg",
-            title: "Burger & Beer",
-            subtitle: "MacDonald's",
-            press: () {},
-          )
+              pngSrc: ("assets/logos/mlabs.png"),
+              title: "mLabs",
+              subtitle: "Gestão de Redes Socias",
+              press: () {}
+              //   Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //       builder: (context) {
+              //         return DetailsScreen();
+              //       },
+              //     ),
+              //   );
+              // },
+              ),
         ],
       ),
     );
