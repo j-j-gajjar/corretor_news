@@ -1,5 +1,7 @@
+import 'package:corretor_news/theme/app_texts.dart';
 import 'package:corretor_news/widgets/discount_card.dart';
 import 'package:corretor_news/widgets/item_list.dart';
+import 'package:corretor_news/widgets/services_list.dart';
 import 'package:flutter/material.dart';
 
 class TabCursos extends StatelessWidget {
@@ -15,37 +17,39 @@ class TabCursos extends StatelessWidget {
           // CategoryList(),
           Padding(
             padding:
-                const EdgeInsets.only(left: 32, right: 32, bottom: 4, top: 32),
+                const EdgeInsets.only(left: 32, right: 32, bottom: 4, top: 40),
             child: Text(
               "Ofertas",
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              // style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+
+              style: textTheme.headline4,
             ),
           ),
           CardWide(),
           Padding(
             padding:
-                const EdgeInsets.only(left: 32, right: 32, bottom: 4, top: 32),
+                const EdgeInsets.only(left: 32, right: 32, bottom: 28, top: 40),
             child: Text(
               "Cursos",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              style: textTheme.headline4,
             ),
           ),
 
           // CategoryList(),
 
-          ItemList(),
+          ServicesList(),
           Padding(
               padding: const EdgeInsets.only(
-                  left: 32, right: 32, bottom: 4, top: 32),
+                  left: 32, right: 32, bottom: 28, top: 40),
               child: Text(
-                "Serviços",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                "Ferramentas e Serviços",
+                style: textTheme.headline4,
               )),
 
           // CategoryList(),
           // DiscountCardView(),
 
-          ItemList(),
+          ServicesListS(),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:corretor_news/theme/app_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 // class ComissaTab extends StatelessWidget {
@@ -248,7 +249,7 @@ class _TabComissaState extends State<TabComissa> {
                                         letterSpacing: 2),
                                   ),
                                   SizedBox(width: 20),
-                                  Icon(Icons.calculate_sharp)
+                                  FaIcon(FontAwesomeIcons.calculator),
                                 ],
                               ),
                             ),

@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'components/app_title_bar.dart';
 import 'indice_pages.dart';
+import 'pages/tabs/tab_webnews.dart';
 import 'theme/app_constants.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:provider/provider.dart';
 // import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 // import 'package:wordpress_flutter/tabs/comissa_tab.dart';
@@ -54,10 +55,11 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: IndexedStack(
+        alignment: Alignment.center,
         index: currentIndex,
         children: <Widget>[
           TabIndices(),
-          TabCursos(),
+          TabWebNews(),
           TabComissa(),
           TabCursos(),
         ],
@@ -78,17 +80,18 @@ class _HomePageState extends State<HomePage> {
         },
         items: [
           SalomonBottomBarItem(
-            icon: Icon(Icons.add_chart_outlined),
+            icon: FaIcon(FontAwesomeIcons.chartBar),
             title: Text('Indíces'),
             selectedColor: Colors.amber,
           ),
           SalomonBottomBarItem(
-            icon: Icon(Icons.book_outlined),
+            icon: FaIcon(FontAwesomeIcons.newspaper),
             title: Text('Notícias'),
             selectedColor: Colors.lightBlue.withOpacity(0.7),
           ),
           SalomonBottomBarItem(
-            icon: Icon(Icons.calculate),
+            icon: Icon(Icons.calculate_outlined),
+            activeIcon: Icon(Icons.calculate),
             title: Text('Calculadora'),
             selectedColor: Colors.teal,
           ),
