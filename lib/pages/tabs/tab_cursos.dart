@@ -1,10 +1,20 @@
 import 'package:corretor_news/theme/app_texts.dart';
+import 'package:corretor_news/widgets/card_cursos.dart';
 import 'package:corretor_news/widgets/discount_card.dart';
-import 'package:corretor_news/widgets/item_list.dart';
+// import 'package:corretor_news/widgets/item_list.dart';
 import 'package:corretor_news/widgets/services_list.dart';
 import 'package:flutter/material.dart';
 
+import 'onboarding/onboarding_page.dart';
+import 'onboarding/onboarding_taxas.dart';
+
 class TabCursos extends StatelessWidget {
+  void goToOnBoarding(context) => Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => OnBoardingPage()),
+      );
+  void goToOnTaxa(context) => Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => OnBoardingTaxa()),
+      );
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -26,6 +36,15 @@ class TabCursos extends StatelessWidget {
             ),
           ),
           CardWide(),
+
+          ElevatedButton(
+            child: Text('Ver mais'),
+            onPressed: () => goToOnBoarding(context),
+          ),
+          ElevatedButton(
+            child: Text('TAXAS'),
+            onPressed: () => goToOnTaxa(context),
+          ),
           Padding(
             padding:
                 const EdgeInsets.only(left: 32, right: 32, bottom: 28, top: 40),
@@ -37,7 +56,10 @@ class TabCursos extends StatelessWidget {
 
           // CategoryList(),
 
-          ServicesList(),
+          CardCursos(),
+          SizedBox(height: 50),
+          CardCursos2(),
+
           Padding(
               padding: const EdgeInsets.only(
                   left: 32, right: 32, bottom: 28, top: 40),

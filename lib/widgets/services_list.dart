@@ -1,3 +1,4 @@
+import 'package:corretor_news/pages/tabs/onboarding/onboarding_taxas.dart';
 import 'package:corretor_news/widgets/services_card.dart';
 import 'package:flutter/material.dart';
 
@@ -31,17 +32,15 @@ class ServicesList extends StatelessWidget {
             pngSrc: ("assets/logos/leadlovers.png"),
             press: () {},
           ),
-          ServicesCard(pngSrc: ("assets/logos/mlabs.png"), press: () {}
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) {
-              //         return DetailsScreen();
-              //       },
-              //     ),
-              //   );
-              // },
-              ),
+          ServicesCard(
+              pngSrc: ("assets/logos/mlabs.png"),
+              // press: () {}
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => OnBoardingTaxa()),
+                );
+              }),
         ],
       ),
     );

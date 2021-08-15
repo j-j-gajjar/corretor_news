@@ -93,9 +93,9 @@ class CardWide extends StatelessWidget {
                       ),
                     ),
                     Expanded(
-                      flex: 2,
-                      child: Icon(Icons.arrow_forward,
-                          size: 80, color: Colors.white.withOpacity(0.3)),
+                      flex: 1,
+                      child: Icon(Icons.arrow_back_ios_new_rounded,
+                          size: 40, color: Colors.white.withOpacity(0.3)),
 
                       // child: SvgPicture.asset("assets/icons/macdonalds.svg"),
                     ),
