@@ -10,7 +10,7 @@ Widget indicesCard(
     yearValue,
     twelveValue}) {
   return Padding(
-    padding: const EdgeInsets.only(bottom: 20),
+    padding: const EdgeInsets.only(bottom: 24),
     child: card(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

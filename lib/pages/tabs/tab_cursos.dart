@@ -1,7 +1,6 @@
 import 'package:corretor_news/theme/app_texts.dart';
-import 'package:corretor_news/widgets/card_cursos.dart';
+import 'package:corretor_news/widgets/card_conteudo.dart';
 import 'package:corretor_news/widgets/discount_card.dart';
-// import 'package:corretor_news/widgets/item_list.dart';
 import 'package:corretor_news/widgets/services_list.dart';
 import 'package:flutter/material.dart';
 
@@ -53,12 +52,31 @@ class TabCursos extends StatelessWidget {
               style: textTheme.headline4,
             ),
           ),
+          // ListConteudo(),
 
           // CategoryList(),
 
-          CardCursos(),
-          SizedBox(height: 50),
-          CardCursos2(),
+          CardConteudo(
+              overtitle: 'MARKETING DIGITAL',
+              title: 'E-MAIL MARKETING',
+              subtitle: 'VOCÊ SABE O QUE É?',
+              icon: Icons.ac_unit,
+              color1: Color(0xFF151575).withOpacity(0.8),
+              color2: Color(0xFF151575).withOpacity(1),
+              onPressed: () => goToOnTaxa(context)),
+
+          SizedBox(height: 30),
+
+          CardConteudo(
+              overtitle: 'FERRAMENTAS',
+              title: 'CRM',
+              subtitle: 'CONHEÇA ESSA FERRAMENTA',
+              icon: Icons.ac_unit,
+              color1: Color(0xFFCA1919).withOpacity(0.8),
+              color2: Color(0xFFC14545).withOpacity(1),
+              onPressed: () => goToOnTaxa(context)),
+          SizedBox(height: 40),
+          // ListConteudo(),
 
           Padding(
               padding: const EdgeInsets.only(

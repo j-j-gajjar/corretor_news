@@ -225,3 +225,4 @@ class CardCursos2 extends StatelessWidget {
     );
   }
 }
+
