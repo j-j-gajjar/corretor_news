@@ -1,5 +1,5 @@
 name: corretor_news
-description: A new Flutter project.
+description: Corretor News App - O app do Corretor de Imóveis
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 0.0.9+1
+version: 1.0.3+1.0.3
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -30,6 +30,10 @@ dependencies:
   responsive_framework: ^0.1.4
   salomon_bottom_bar: ^3.1.0
   webview_flutter: ^2.0.12
+  url_launcher: ^6.0.9
+  flutter_staggered_animations: ^1.0.0
+  html: ^0.15.0
+  introduction_screen: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +54,7 @@ flutter:
     - assets/icons/
     - assets/logos/
     - assets/coin/
+    - assets/intro/
     # - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

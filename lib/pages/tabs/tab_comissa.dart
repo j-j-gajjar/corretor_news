@@ -30,18 +30,18 @@ class _TabComissaState extends State<TabComissa> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        alignment: Alignment.bottomCenter,
+        // alignment: Alignment.topCenter,
         child: SingleChildScrollView(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.center,
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Padding(
                 padding:
-                    EdgeInsets.only(left: 20, top: 30, right: 20, bottom: 80),
+                    EdgeInsets.only(left: 20, top: 36, right: 20, bottom: 40),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("VALOR DA COMISSÃO:",
                         style: kHeadingextStyle.copyWith(
@@ -52,7 +52,9 @@ class _TabComissaState extends State<TabComissa> {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: 'R\$ $valorcomissao ',
+                            text: (valorcomissao == null)
+                                ? 'R\$ 0,00'
+                                : 'R\$ $valorcomissao ',
                             style: ValueTextStyle,
                           ),
                         ],
@@ -61,10 +63,10 @@ class _TabComissaState extends State<TabComissa> {
                   ],
                 ),
               ),
-              // SizedBox(height: 100),
+              SizedBox(height: 32),
               Container(
                 padding: EdgeInsets.only(bottom: 10),
-                height: 390,
+                // height: 390,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -83,8 +85,8 @@ class _TabComissaState extends State<TabComissa> {
                   ],
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: 24,
@@ -192,9 +194,10 @@ class _TabComissaState extends State<TabComissa> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 32),
-                      padding: EdgeInsets.symmetric(horizontal: 50),
-                      width: double.infinity,
+                      // alignment: Alignment.topCenter,
+                      // margin: EdgeInsets.symmetric(vertical: 32),
+                      padding: EdgeInsets.symmetric(horizontal: 32),
+                      // width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
@@ -254,6 +257,7 @@ class _TabComissaState extends State<TabComissa> {
                               ),
                             ),
                           ),
+                          SizedBox(height: 200),
                         ],
                       ),
                     ),

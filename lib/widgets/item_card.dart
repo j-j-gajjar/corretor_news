@@ -1,6 +1,6 @@
 import 'package:corretor_news/theme/app_texts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemCard extends StatelessWidget {
   final String title, subtitle, pngSrc;
@@ -16,7 +16,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // This size provide you the total height and width of the screen
-    double c_width = MediaQuery.of(context).size.width * 0.8;
+    // double c_width = MediaQuery.of(context).size.width * 0.8;
 
     // Size size = MediaQuery.of(context).size;
     return Container(
@@ -59,7 +59,7 @@ class ItemCard extends StatelessWidget {
                   Row(
                     children: [
                       Container(
-                        width: c_width,
+                        // width: c_width,
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
