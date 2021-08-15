@@ -9,19 +9,33 @@
 //   String content;
 
 //   /// featured image getter with checks for no image
-//   String get image =>  extra?.image != null ? extra.image[0]?.sourceUrl ?? '' : '';
+//   String get image =>
+//       extra?.image != null ? extra.image[0]?.sourceUrl ?? '' : '';
 
-//   String get category => extra?.categories != null ? extra.categories[0]?.name ?? '' : '';
+//   String get category =>
+//       extra?.categories != null ? extra.categories[0]?.name ?? '' : '';
 
-//   String get date => DateFormat('MMM. dd - h:mm a').format(DateTime.parse(this.modifiedGmt)).toString();
+//   String get date => DateFormat('MMM. dd - h:mm a')
+//       .format(DateTime.parse(this.modifiedGmt))
+//       .toString();
 
 //   bool isDetailCard = false;
 
-//   PostEntity({this.modifiedGmt, this.extra, this.link, this.id, this.title, this.content});
+//   PostEntity(
+//       {required this.modifiedGmt,
+//       required this.extra,
+//       required this.link,
+//       required this.id,
+//       required this.title,
+//       required this.content});
 
 //   PostEntity.fromJson(Map<String, dynamic> json) {
 //     modifiedGmt = json['modified_gmt'];
-//     extra = json['_embedded'] != null ? new PostEmbedded.fromJson(json['_embedded']) : null;
+//     if (json['_embedded'] != null) {
+//       extra = new PostEmbedded.fromJson(json['_embedded']);
+//     } else {
+//       extra = null;
+//     }
 //     link = json['link'];
 //     id = json['id'];
 //     title = json['title'] != null ? json['title']['rendered'] : null;
@@ -138,7 +152,8 @@
 //   String sourceUrl = "";
 //   int height;
 
-//   FeaturedImage({this.file, this.mimeType, this.width, this.sourceUrl, this.height});
+//   FeaturedImage(
+//       {this.file, this.mimeType, this.width, this.sourceUrl, this.height});
 
 //   FeaturedImage.fromJson(Map<String, dynamic> json) {
 //     if (json['media_details'] == null) return;

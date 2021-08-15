@@ -2,6 +2,8 @@ import 'package:corretor_news/pages/tabs/onboarding/onboarding_taxas.dart';
 import 'package:corretor_news/widgets/services_card.dart';
 import 'package:flutter/material.dart';
 
+import 'card_conteudo.dart';
+
 class ServicesList extends StatelessWidget {
   const ServicesList({
     Key? key,
@@ -58,6 +60,14 @@ class ServicesListS extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
+          // CardConteudo(
+          //     overtitle: 'FERRAMENTAS',
+          //     title: 'CRM',
+          //     subtitle: 'CONHEÇA ESSA FERRAMENTA',
+          //     icon: Icons.ac_unit,
+          //     color1: Color(0xFFCA1919).withOpacity(0.8),
+          //     color2: Color(0xFFC14545).withOpacity(1),
+          //     onPressed: () {}),
           ServicesCardS(pngSrc: ("assets/logos/bitrix24.png"), press: () {}
               //   Navigator.push(
               //     context,

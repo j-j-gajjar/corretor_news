@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'item_card.dart';
+import 'list_conteudo.dart';
 
 class ItemList extends StatelessWidget {
   const ItemList({
@@ -17,7 +18,7 @@ class ItemList extends StatelessWidget {
               pngSrc: ("assets/logos/bitrix24.png"),
               title: "Bitrix24",
               subtitle: "2 Meses Grátis",
-              press: () {}
+              onpress: () {}
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(
@@ -32,29 +33,29 @@ class ItemList extends StatelessWidget {
             pngSrc: ("assets/logos/bling.png"),
             title: "Bling",
             subtitle: "O ERP pensado no Corretor de Imóveis",
-            press: () {},
+            onpress: () => goToOnTaxa(context),
           ),
           ItemCard(
             pngSrc: ("assets/logos/leadlovers.png"),
             title: "Leadlovers",
             subtitle: "Estratégia e automação de E-mail Marketing",
-            press: () {},
+            onpress: () {},
           ),
           ItemCard(
-              pngSrc: ("assets/logos/mlabs.png"),
-              title: "mLabs",
-              subtitle: "Gestão de Redes Socias",
-              press: () {}
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) {
-              //         return DetailsScreen();
-              //       },
-              //     ),
-              //   );
-              // },
-              ),
+            pngSrc: ("assets/logos/mlabs.png"),
+            title: "mLabs",
+            subtitle: "Gestão de Redes Socias",
+            onpress: () {},
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) {
+            //         return DetailsScreen();
+            //       },
+            //     ),
+            //   );
+            // },
+          ),
         ],
       ),
     );
