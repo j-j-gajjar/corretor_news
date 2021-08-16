@@ -1,6 +1,7 @@
 import 'package:corretor_news/pages/tabs/tab_indices.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'blog/app/screens/news_screen.dart';
 import 'components/app_title_bar.dart';
 import 'indice_pages.dart';
 import 'pages/tabs/tab_webnews.dart';
@@ -43,6 +44,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         actions: <Widget>[
+          
           Padding(
             padding: const EdgeInsets.only(right: 26),
             child: GestureDetector(
@@ -59,7 +61,7 @@ class _HomePageState extends State<HomePage> {
         index: currentIndex,
         children: <Widget>[
           TabIndices(),
-          TabWebNews(),
+          TabNews(),
           TabComissa(),
           TabCursos(),
         ],

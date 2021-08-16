@@ -6,6 +6,7 @@ class OnBoardingTaxa extends StatelessWidget {
   @override
   Widget build(BuildContext context) => SafeArea(
         child: IntroductionScreen(
+          
           pages: [
             PageViewModel(
               title: 'Conheça as principais taxas do Mercado Imobiliário',

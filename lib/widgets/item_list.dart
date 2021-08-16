@@ -15,7 +15,7 @@ class ItemList extends StatelessWidget {
       child: Row(
         children: <Widget>[
           ItemCard(
-              pngSrc: ("assets/logos/bitrix24.png"),
+              pngSrc: ("assets/logo/bitrix24.png"),
               title: "Bitrix24",
               subtitle: "2 Meses Grátis",
               onpress: () {}
@@ -30,19 +30,19 @@ class ItemList extends StatelessWidget {
               // },
               ),
           ItemCard(
-            pngSrc: ("assets/logos/bling.png"),
+            pngSrc: ("assets/logo/bling.png"),
             title: "Bling",
             subtitle: "O ERP pensado no Corretor de Imóveis",
             onpress: () => goToOnTaxa(context),
           ),
           ItemCard(
-            pngSrc: ("assets/logos/leadlovers.png"),
+            pngSrc: ("assets/logo/leadlovers.png"),
             title: "Leadlovers",
             subtitle: "Estratégia e automação de E-mail Marketing",
             onpress: () {},
           ),
           ItemCard(
-            pngSrc: ("assets/logos/mlabs.png"),
+            pngSrc: ("assets/logo/mlabs.png"),
             title: "mLabs",
             subtitle: "Gestão de Redes Socias",
             onpress: () {},
