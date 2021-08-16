@@ -1,105 +1,139 @@
-// // import 'dart:convert';
+import 'package:corretor_news/models/posts.dart';
+import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
-// // import 'package:http/http.dart' as http;
+class WpApi {
+  static const api = "https://publicidadeimobiliaria.com/wp-json/wp/v2";
+  static const listApi = "https://publicidadeimobiliaria.com/wp-json/wp/v2";
+  static const headers = {"Accept": "application/json"};
 
-// // import '../config.dart';
-// // import '../model/post_entity.dart';
+  String _parseHtmlString(String htmlString) {
+    var document = parse(htmlString);
 
-// // class WpApi {
-// //   static const String BASE_URL = URL + REST_URL_PREFIX + '/wp/v2/';
+    String parsedString = parse(document.body!.text).documentElement!.text;
 
-// //   static Future<List<PostEntity>> getPostsList(
-// //       {int category = 0, int page = 1}) async {
-// //     List<PostEntity> posts = [];
-// //     try {
-// //       String extra = category != 0 ? '&categories=' + '$category' : '';
+    return parsedString;
+  }
 
-// //       dynamic response = await http
-// //           .get(Uri.parse(BASE_URL + 'posts?_embed&page=$page' + extra));
-// //       dynamic json = jsonDecode(response.body);
+  Future<List<Posts>> fetchTopPosts() async {
+    List<Posts> posts = [];
+    try {
+      var response = await http.get(
+        Uri.parse("$api/posts?_embed&per_page=20"),
+        headers: headers,
+      );
 
-// //       (json as List).forEach((v) {
-// //         posts.add(PostEntity.fromJson(v));
-// //       });
-// //     } catch (e) {
-// //       //TODO Handle No Internet Response
-// //     }
-// //     return posts;
-// //   }
+      var convertDataToJson = json.decode(response.body);
+      convertDataToJson.forEach((post) {
+        String title = _parseHtmlString(post['title']['rendered']);
 
-// //   static Future<List<PostCategory>> getCategoriesList({int page = 1}) async {
-// //     List<PostCategory> categories = List();
-// //     try {
-// //       dynamic response = await http.get(Uri.parse(BASE_URL +
-// //           'categories?orderby=count&order=desc&per_page=15&page=$page'));
-// //       dynamic json = jsonDecode(response.body);
+        // if (title.length > 30) {
+        //   title = _parseHtmlString(post['title']['rendered']).substring(0, 20) + "...";
+        // }
 
-// //       (json as List).forEach((v) {
-// //         categories.add(PostCategory.fromJson(v));
-// //       });
-// //     } catch (e) {
-// //       //TODO Handle No Internet Response
-// //     }
-// //     return categories;
-// //   }
-// // }
+        var time = post['date'];
 
-// import 'dart:convert';
+        var content = _parseHtmlString(post['content']['rendered']);
 
-// import 'package:http/http.dart' as http;
+        var imageUrl = post['_embedded']['wp:featuredmedia'] != null
+            ? post['_embedded']['wp:featuredmedia'][0]['source_url']
+            : '';
 
-// import '../config.dart';
-// import '../model/post_entity.dart';
-// import 'package:corretor_news/model/post_entity.dart';
+        posts.add(Posts(
+          title: title,
+          image: imageUrl,
+          contents: content,
+          time: time,
+        ));
+      });
+    } catch (e) {
+      print(e.toString());
+      throw (e);
+    }
 
-// //   static const String BASE_URL = URL + REST_URL_PREFIX + '/wp/v2/';
+    return posts;
+  }
 
-// //   static Future<List<PostEntity>> getPostsList(
-// //       {int category = 0, int page = 1}) async {
-// //     List<PostEntity> posts = [];
-// //     try {
-// //       String extra = category != 0 ? '&categories=' + '$category' : '';
+  // call for all Game articles
+  Future<List<Posts>> fetchListPosts() async {
+    // var response = await http.get(
+    //   Uri.parse(listApi + "posts?_embed&categories=0"),
+    //   headers: headers,
+    // );
 
-// //       dynamic response = await http
-// //           .get(Uri.parse(BASE_URL + 'posts?_embed&page=$page' + extra));
-// //       dynamic json = jsonDecode(response.body);
+    var response = await http.get(
+      Uri.parse("$api/posts?_embed&per_page=20"),
+      headers: headers,
+    );
 
-// //       (json as List).forEach((v) {
-// //         posts.add(PostEntity.fromJson(v));
-// //       });
-// //     } catch (e) {
-// //       //TODO Handle No Internet Response
-// //     }
-// //     return posts;
-// //
+    var convertDataToJson = jsonDecode(response.body);
 
-// class WpApi {
-//   static const String BASE_URL = URL + REST_URL_PREFIX + '/wp/v2/';
+    List<Posts> posts = [];
 
-//   static Future<List<PostEntity>> getPostsList(
-//       {int category = 0, int page = 1}) async {
-//     List<PostEntity> posts = [];
-//     try {
-//       String extra = category != 0 ? '&categories=' + '$category' : '';
+    convertDataToJson.forEach((post) {
+      String title = _parseHtmlString(post['title']['rendered']);
 
-//       dynamic response = await http
-//           .get(Uri.parse(BASE_URL + 'posts?_embed&page=$page' + extra));
-//       dynamic json = jsonDecode(response.body);
+      var content = _parseHtmlString(post['content']['rendered']);
+      var time = post['date'];
 
-//       (json as List).forEach((v) {
-//         posts.add(PostEntity.fromJson(v));
-//       });
-//     } catch (e) {
-//       // ignore: todo
-//       //TODO Handle No Internet Response
-//     }
-//     return posts;
-//   }
+      var imageUrl = post['_embedded']['wp:featuredmedia'] != null
+          ? post['_embedded']['wp:featuredmedia'][0]['source_url']
+          : Image.network(
+              'assets/img_error.jpg',
+              fit: BoxFit.cover,
+              width: 100,
+              height: 90,
+            );
+
+      posts.add(
+          Posts(title: title, image: imageUrl, contents: content, time: time));
+    });
+
+    return posts;
+  }
+
+  // api call for categories sections
+  Future<List<Posts>> fetchOtherCategories(int cartCode) async {
+    var response = await http.get(
+      Uri.parse(listApi + "posts?_embed&categories=$cartCode"),
+      headers: headers,
+    );
+
+    var convertDataToJson = jsonDecode(response.body);
+
+    List<Posts> posts = [];
+
+    convertDataToJson.forEach((post) {
+      String title = _parseHtmlString(post['title']['rendered']);
+
+      var content = _parseHtmlString(post['content']['rendered']);
+      var time = post['date'];
+
+      var imageUrl = post['_embedded']['wp:featuredmedia'] != null
+          ? post['_embedded']['wp:featuredmedia'][0]['source_url']
+          : Image.network(
+              'assets/img_error.jpg',
+              fit: BoxFit.cover,
+              width: 100,
+              height: 90,
+            );
+
+      // var time = post['date'];
+
+      posts.add(
+          Posts(title: title, image: imageUrl, contents: content, time: time));
+    });
+
+    return posts;
+  }
+}
 
 //   static Future<List<PostCategory>> getCategoriesList({int page = 1}) async {
-//     List<PostCategory> categories = [];
+//     List<PostCategory> categories = List();
 //     try {
-//       dynamic response = await http.get(Uri.parse(BASE_URL +
+//       var response = await http.get(Uri.parse(BASE_URL +
 //           'categories?orderby=count&order=desc&per_page=15&page=$page'));
 //       dynamic json = jsonDecode(response.body);
 
@@ -107,9 +141,9 @@
 //         categories.add(PostCategory.fromJson(v));
 //       });
 //     } catch (e) {
-//       // ignore: todo
 //       //TODO Handle No Internet Response
 //     }
 //     return categories;
 //   }
 // }
+

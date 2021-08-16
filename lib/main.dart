@@ -1,33 +1,36 @@
+import 'dart:io';
+
+import 'package:corretor_news/blog/app/src/splash.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_wrapper.dart';
-import 'indice_pages.dart';
+import 'package:flutter/services.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:provider/provider.dart';
+import 'blog/app/src/app.dart';
+import 'theme/const_values.dart';
+import 'models/posts.dart';
+import 'package:corretor_news/providers/theme_provider.dart';
 
-void main() {
-  runApp(MyApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Directory document = await getApplicationDocumentsDirectory();
+  Hive
+    ..init(document.path)
+    ..registerAdapter(PostsAdapter());
+  await Hive.openBox(appState);
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: (context, widget) => ResponsiveWrapper.builder(
-        BouncingScrollWrapper.builder(context, widget!),
-        maxWidth: 1200,
-        minWidth: 450,
-        defaultScale: true,
-        breakpoints: [
-          ResponsiveBreakpoint.autoScale(450, name: MOBILE),
-          ResponsiveBreakpoint.autoScale(800, name: TABLET),
-          ResponsiveBreakpoint.autoScale(1000, name: TABLET),
-          ResponsiveBreakpoint.resize(1200, name: DESKTOP),
-          ResponsiveBreakpoint.autoScale(2460, name: "4K"),
-        ],
-        // background: Container(color: kBgLightColor),
-      ),
-      // theme: ThemeData(),
-      home: HomePage(),
-    );
-    
-  }
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: ThemeProvider(),
+        ),
+      ],
+      child: App(),
+    ),
+  );
 }

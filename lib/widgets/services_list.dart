@@ -15,7 +15,7 @@ class ServicesList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          ServicesCard(pngSrc: ("assets/logos/bitrix24.png"), press: () {}
+          ServicesCard(pngSrc: ("assets/logo/bitrix24.png"), press: () {}
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(
@@ -27,15 +27,15 @@ class ServicesList extends StatelessWidget {
               // },
               ),
           ServicesCard(
-            pngSrc: ("assets/logos/bling.png"),
+            pngSrc: ("assets/logo/bling.png"),
             press: () {},
           ),
           ServicesCard(
-            pngSrc: ("assets/logos/leadlovers.png"),
+            pngSrc: ("assets/logo/leadlovers.png"),
             press: () {},
           ),
           ServicesCard(
-              pngSrc: ("assets/logos/mlabs.png"),
+              pngSrc: ("assets/logo/mlabs.png"),
               // press: () {}
               press: () {
                 Navigator.push(
@@ -68,7 +68,7 @@ class ServicesListS extends StatelessWidget {
           //     color1: Color(0xFFCA1919).withOpacity(0.8),
           //     color2: Color(0xFFC14545).withOpacity(1),
           //     onPressed: () {}),
-          ServicesCardS(pngSrc: ("assets/logos/bitrix24.png"), press: () {}
+          ServicesCardS(pngSrc: ("assets/logo/bitrix24.png"), press: () {}
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(
@@ -80,14 +80,14 @@ class ServicesListS extends StatelessWidget {
               // },
               ),
           ServicesCardS(
-            pngSrc: ("assets/logos/bling.png"),
+            pngSrc: ("assets/logo/bling.png"),
             press: () {},
           ),
           ServicesCardS(
-            pngSrc: ("assets/logos/leadlovers.png"),
+            pngSrc: ("assets/logo/leadlovers.png"),
             press: () {},
           ),
-          ServicesCardS(pngSrc: ("assets/logos/mlabs.png"), press: () {}
+          ServicesCardS(pngSrc: ("assets/logo/mlabs.png"), press: () {}
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(
