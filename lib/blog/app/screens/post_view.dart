@@ -1,5 +1,6 @@
 import 'package:corretor_news/components/app_title_bar.dart';
 import 'package:corretor_news/components/bottom_news.dart';
+import 'package:corretor_news/components/bottom_news.dart';
 import 'package:corretor_news/models/posts.dart';
 import 'package:corretor_news/theme/app_constants.dart';
 import 'package:corretor_news/theme/const_values.dart';
