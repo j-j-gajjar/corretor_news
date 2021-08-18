@@ -39,7 +39,7 @@ class CardWide extends StatelessWidget {
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 40),
                 child: Row(
                   children: <Widget>[
                     Expanded(

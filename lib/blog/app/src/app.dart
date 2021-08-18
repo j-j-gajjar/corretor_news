@@ -67,7 +67,7 @@ class _AppState extends State<App> {
                 // background: Container(color: kBgLightColor),
               ),
               debugShowCheckedModeBanner: false,
-              title: 'NaijaTechGuy Blog',
+              title: 'Corretor News App',
               theme: isThemeChange.mTheme == false
                   ? buildLightTheme()
                   : buildDarkTheme(),

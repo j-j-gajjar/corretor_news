@@ -76,6 +76,7 @@ class WpApi {
       String title = _parseHtmlString(post['title']['rendered']);
 
       var content = _parseHtmlString(post['content']['rendered']);
+      var author = _parseHtmlString(post['content']['rendered']);
       var time = post['date'];
 
       var imageUrl = post['_embedded']['wp:featuredmedia'] != null
@@ -87,8 +88,12 @@ class WpApi {
               height: 90,
             );
 
-      posts.add(
-          Posts(title: title, image: imageUrl, contents: content, time: time));
+      posts.add(Posts(
+          title: title,
+          image: imageUrl,
+          contents: content,
+          time: time,
+          authur: author));
     });
 
     return posts;

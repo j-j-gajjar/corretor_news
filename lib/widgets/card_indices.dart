@@ -34,7 +34,6 @@ Widget indicesCard(
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black45,
                 ),
               ),
             ],
