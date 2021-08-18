@@ -81,7 +81,7 @@ class OnBoardingPage extends StatelessWidget {
         // imagePadding: EdgeInsets.all(24),
         pageColor: Colors.white,
       );
-  void goToOnBoarding(context) => Navigator.of(context).pushReplacement(
+  void goToOnBoarding(context) => Navigator.of(context).push(
         MaterialPageRoute(builder: (_) => OnBoardingPage()),
       );
 }

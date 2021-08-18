@@ -72,7 +72,7 @@ class _TabNewsState extends State<TabNews> {
                                     MainAxisAlignment.spaceBetween,
                                 children: <Widget>[
                                   Text(
-                                    "Latest",
+                                    "Últimas",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: setTextSize(25),
@@ -86,8 +86,6 @@ class _TabNewsState extends State<TabNews> {
                                       fontSize: setTextSize(18),
                                     ),
                                   ),
-                                  
-
                                 ],
                               ),
                             ),

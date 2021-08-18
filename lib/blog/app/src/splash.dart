@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     storeData = Hive.box(appState);
-    Timer(Duration(seconds: 2), () {
+    Timer(Duration(seconds: 4), () {
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
         return HomePage();
         // return TabView();
@@ -35,15 +35,17 @@ class _SplashScreenState extends State<SplashScreen> {
             children: [
               Expanded(
                 child: Image.asset(
-                  'assets/logo/naijaguy.png',
+                  'assets/images/logo.png',
                   height: setContainerHeight(150),
                   width: setContainerWidth(150),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10),
-                child: Text(
-                  "View Us",
+                padding: const EdgeInsets.all(20),
+                child: Image.asset(
+                  'assets/images/newLoading.gif',
+                  height: setContainerHeight(150),
+                  width: setContainerWidth(150),
                 ),
               )
             ],

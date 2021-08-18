@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:corretor_news/blog/app/src/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';

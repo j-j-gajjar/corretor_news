@@ -23,7 +23,7 @@ class _SettingsState extends State<Settings> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 100),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -36,8 +36,8 @@ class _SettingsState extends State<Settings> {
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: isThemeChange.mTheme == false
-                              ? AssetImage('assets/logo/naijatechguyD.png')
-                              : AssetImage('assets/logo/naijatechguy.png'),
+                              ? AssetImage('assets/images/logo.png')
+                              : AssetImage('assets/images/logo.png'),
                         ),
                       ),
                     ),
@@ -51,20 +51,37 @@ class _SettingsState extends State<Settings> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 50,
-              ),
+              SizedBox(height: 40),
+              Divider(),
               ListTile(
                 title: Text(
-                  "Notifications",
+                  "Modo Claro/Escuro",
                   style: TextStyle(
-                    fontSize: setTextSize(18),
+                    fontSize: setTextSize(20),
                   ),
                 ),
                 subtitle: Text(
                   "Subscribe to notifications (Not Available Yet!)",
                   style: TextStyle(
-                    fontSize: setTextSize(13),
+                    fontSize: setTextSize(18),
+                  ),
+                ),
+                trailing: Switch(value: true, onChanged: null),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              ListTile(
+                title: Text(
+                  "Notificações",
+                  style: TextStyle(
+                    fontSize: setTextSize(20),
+                  ),
+                ),
+                subtitle: Text(
+                  "Subscribe to notifications (Not Available Yet!)",
+                  style: TextStyle(
+                    fontSize: setTextSize(18),
                   ),
                 ),
                 trailing: Switch(value: true, onChanged: null),
@@ -72,21 +89,19 @@ class _SettingsState extends State<Settings> {
               Divider(),
               ListTile(
                 title: Text(
-                  "About Us",
+                  "Sobre",
                   style: TextStyle(
-                    fontSize: setTextSize(18),
+                    fontSize: setTextSize(20),
                   ),
                 ),
                 subtitle: Text(
                   "About the developer",
                   style: TextStyle(
-                    fontSize: setTextSize(13),
+                    fontSize: setTextSize(18),
                   ),
                 ),
-                trailing: Icon(
-                  Icons.info,
-                  color: subColor,
-                ),
+                trailing:
+                    Icon(Icons.info_outline, color: Colors.lightBlue, size: 32),
                 onTap: () {
                   showDialog(
                     context: context,
@@ -110,21 +125,91 @@ class _SettingsState extends State<Settings> {
               Divider(),
               ListTile(
                 title: Text(
-                  "Contact Us",
+                  "Politica de Privacidade",
+                  style: TextStyle(
+                    fontSize: setTextSize(20),
+                  ),
+                ),
+                subtitle: Text(
+                  "About the developer",
                   style: TextStyle(
                     fontSize: setTextSize(18),
+                  ),
+                ),
+                trailing: Icon(Icons.privacy_tip_outlined,
+                    color: Colors.lightBlue, size: 32),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: Text(
+                          "About the Developer",
+                          style: TextStyle(),
+                        ),
+                        content: Text(
+                          devInfo,
+                          style: TextStyle(
+                            fontSize: setTextSize(15),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text(
+                  "Fontes",
+                  style: TextStyle(
+                    fontSize: setTextSize(20),
+                  ),
+                ),
+                subtitle: Text(
+                  "About the developer",
+                  style: TextStyle(
+                    fontSize: setTextSize(18),
+                  ),
+                ),
+                trailing: Icon(Icons.new_label_sharp,
+                    color: Colors.lightBlue, size: 32),
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return AlertDialog(
+                        title: Text(
+                          "About the Developer",
+                          style: TextStyle(),
+                        ),
+                        content: Text(
+                          devInfo,
+                          style: TextStyle(
+                            fontSize: setTextSize(15),
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text(
+                  "Contato",
+                  style: TextStyle(
+                    fontSize: setTextSize(20),
                   ),
                 ),
                 subtitle: Text(
                   "Contact the developer",
                   style: TextStyle(
-                    fontSize: setTextSize(13),
+                    fontSize: setTextSize(18),
                   ),
                 ),
-                trailing: Icon(
-                  Icons.phone,
-                  color: subColor,
-                ),
+                trailing: Icon(Icons.mark_email_read_outlined,
+                    color: Colors.lightBlue, size: 32),
                 onTap: () {
                   showDialog(
                     context: context,
@@ -169,21 +254,18 @@ class _SettingsState extends State<Settings> {
               Divider(),
               ListTile(
                 title: Text(
-                  "Share",
+                  "Compartilhar",
                   style: TextStyle(
-                    fontSize: setTextSize(18),
+                    fontSize: setTextSize(20),
                   ),
                 ),
                 subtitle: Text(
                   "Share the app with friends",
                   style: TextStyle(
-                    fontSize: setTextSize(13),
+                    fontSize: setTextSize(18),
                   ),
                 ),
-                trailing: Icon(
-                  Icons.share,
-                  color: subColor,
-                ),
+                trailing: Icon(Icons.share, color: Colors.lightBlue, size: 32),
                 onTap: () {
                   Share.share('check out my blog app for Naija Tech Guy',
                       subject: 'Look what I made!');
@@ -192,21 +274,18 @@ class _SettingsState extends State<Settings> {
               Divider(),
               ListTile(
                 title: Text(
-                  "Rate Us",
+                  "Avaliar",
                   style: TextStyle(
-                    fontSize: setTextSize(18),
+                    fontSize: setTextSize(20),
                   ),
                 ),
                 subtitle: Text(
                   "Rate the app on play store",
                   style: TextStyle(
-                    fontSize: setTextSize(13),
+                    fontSize: setTextSize(18),
                   ),
                 ),
-                trailing: Icon(
-                  Icons.star,
-                  color: subColor,
-                ),
+                trailing: Icon(Icons.star, color: Colors.lightBlue, size: 32),
                 onTap: () {
                   LaunchReview.launch(
                     androidAppId: "com.viewus.wp_blog",

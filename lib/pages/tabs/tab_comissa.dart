@@ -1,6 +1,12 @@
+import 'package:corretor_news/components/bottom_calc.dart';
+import 'package:corretor_news/components/bottom_news.dart';
+import 'package:corretor_news/providers/theme_provider.dart';
 import 'package:corretor_news/theme/app_constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 // class ComissaTab extends StatelessWidget {
@@ -28,6 +34,7 @@ class _TabComissaState extends State<TabComissa> {
 
   @override
   Widget build(BuildContext context) {
+    final isThemeChange = Provider.of<ThemeProvider>(context);
     return Scaffold(
       body: Container(
         // alignment: Alignment.topCenter,
@@ -38,15 +45,18 @@ class _TabComissaState extends State<TabComissa> {
             children: <Widget>[
               Padding(
                 padding:
-                    EdgeInsets.only(left: 20, top: 36, right: 20, bottom: 40),
+                    EdgeInsets.only(left: 20, top: 26, right: 20, bottom: 40),
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text("VALOR DA COMISSÃO:",
-                        style: kHeadingextStyle.copyWith(
-                            color: Colors.black.withOpacity(0.4),
-                            fontSize: 20)),
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[600],
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w600,
+                        )),
                     SizedBox(height: 10),
                     RichText(
                       text: TextSpan(
@@ -63,9 +73,9 @@ class _TabComissaState extends State<TabComissa> {
                   ],
                 ),
               ),
-              SizedBox(height: 32),
+              // SizedBox(height: 32),
               Container(
-                padding: EdgeInsets.only(bottom: 10),
+                padding: EdgeInsets.only(bottom: 40),
                 // height: 390,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -75,7 +85,9 @@ class _TabComissaState extends State<TabComissa> {
                     bottomLeft: Radius.circular(40),
                     bottomRight: Radius.circular(40),
                   ),
-                  color: Colors.white,
+                  color: isThemeChange.mTheme == false
+                      ? Colors.white
+                      : Colors.grey[900],
                   boxShadow: [
                     BoxShadow(
                       offset: Offset(0, 4),
@@ -209,57 +221,6 @@ class _TabComissaState extends State<TabComissa> {
                         //   ),
                         // ],
                       ),
-                      child: Row(
-                        children: <Widget>[
-                          Container(
-                              padding: EdgeInsets.all(14),
-                              height: 60,
-                              width: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.grey[200],
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              child: Icon(Icons.share)),
-                          SizedBox(width: 30),
-                          Expanded(
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: Colors.teal,
-                                elevation: 10,
-                                shadowColor: Colors.teal[400],
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40),
-                                ),
-                                padding: EdgeInsets.symmetric(vertical: 24),
-                              ),
-                              onPressed: () {
-                                final int taxacorretor =
-                                    int.parse(_taxacorretor.text);
-                                final int vtotal = int.parse(_valorbruto.text);
-                                setState(() {
-                                  valorcomissao =
-                                      calctaxacorretor(taxacorretor, vtotal);
-                                });
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'CALCULAR',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w600,
-                                        letterSpacing: 2),
-                                  ),
-                                  SizedBox(width: 20),
-                                  FaIcon(FontAwesomeIcons.calculator),
-                                ],
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 200),
-                        ],
-                      ),
                     ),
                   ],
                 ),
@@ -269,8 +230,9 @@ class _TabComissaState extends State<TabComissa> {
           ),
         ),
       ),
+      bottomNavigationBar: BottomCalcBar(),
     );
   }
 }
 
-// 
+//

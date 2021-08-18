@@ -34,7 +34,7 @@ Widget cardCoin(BuildContext context,
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 12, vertical: 7),
                   decoration: BoxDecoration(
-                      color: currentTime! >= 0 ? Colors.green : Colors.pink,
+                      color: currentTime! >= 0 ? Colors.green : Colors.blue,
                       borderRadius: BorderRadius.all(Radius.circular(30))),
                   child: Text(
                     currentTime >= 0 ? '+ $currentTime %' : '$currentTime %',
@@ -60,9 +60,9 @@ Widget cardCoin(BuildContext context,
                 Text(
                   '$valor',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50,
-                      color: Colors.black87),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 50,
+                  ),
                 ),
                 // Image.network(
                 //   '$iconUrl',
