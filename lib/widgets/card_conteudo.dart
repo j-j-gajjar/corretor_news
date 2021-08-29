@@ -24,105 +24,109 @@ class CardConteudo extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: Card(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        elevation: 20,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0),
-        ),
-        child: Column(
-          children: <Widget>[
-            // Text(
-            //   "Offers & Discounts",
-            //   style: TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
-            // ),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                gradient: LinearGradient(
-                  colors: [
-                    color1,
-                    color1,
-                  ],
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(15),
+        child: Card(
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          elevation: 20,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          child: Column(
+            children: <Widget>[
+              // Text(
+              //   "Offers & Discounts",
+              //   style: TextStyle(fontWeight: FontWeight.bold, color: kTextColor),
+              // ),
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  gradient: LinearGradient(
+                    colors: [
+                      color1,
+                      color1,
+                    ],
+                  ),
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        flex: 4,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.6)),
+                                children: [
+                                  TextSpan(
+                                    text: overtitle,
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w500,
+                                        letterSpacing: 1.5),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.9)),
+                                children: [
+                                  TextSpan(
+                                    text: title,
+                                    style: textTheme.headline3!
+                                        .copyWith(fontSize: 36),
+                                    // TextStyle(
+                                    //   fontSize: 40,
+                                    //   fontWeight: FontWeight.bold,
+                                    // ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 30),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(
+                                    color: Colors.white.withOpacity(0.9)),
+                                children: [
+                                  TextSpan(
+                                    text: subtitle,
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 1.3),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 24),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          child: Icon(
+                            icon,
+                            size: 200,
+                            color: Colors.white.withOpacity(0.3),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
-                child: Row(
-                  children: <Widget>[
-                    Expanded(
-                      flex: 4,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.6)),
-                              children: [
-                                TextSpan(
-                                  text: overtitle,
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w500,
-                                      letterSpacing: 1.5),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 10),
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.9)),
-                              children: [
-                                TextSpan(
-                                  text: title,
-                                  style: textTheme.headline3!
-                                      .copyWith(fontSize: 38),
-                                  // TextStyle(
-                                  //   fontSize: 40,
-                                  //   fontWeight: FontWeight.bold,
-                                  // ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 30),
-                          RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.9)),
-                              children: [
-                                TextSpan(
-                                  text: subtitle,
-                                  style: TextStyle(fontSize: 20),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(height: 24),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: Icon(
-                        icon,
-                        size: 180,
-                        color: Colors.white.withOpacity(0.3),
-                      ),
-                      // Icon(Icons.monetization_on,
-                      //     size: 220, color: Colors.white.withOpacity(0.3)),
-
-                      // child: SvgPicture.asset("assets/icons/macdonalds.svg"),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

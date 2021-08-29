@@ -4,19 +4,10 @@ import 'package:corretor_news/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'blog/app/screens/news_screen.dart';
-import 'components/app_title_bar.dart';
+import 'blog/app/screens/news/news_screen.dart';
 import 'indice_pages.dart';
 import 'theme/app_constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-// import 'package:provider/provider.dart';
-// import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-// import 'package:wordpress_flutter/tabs/comissa_tab.dart';
-// import 'package:wordpress_flutter/tabs/cursos_tab.dart';
-// import 'package:wordpress_flutter/tabs/ind_tab.dart';
-// import 'package:wordpress_flutter/tabs/indices_tab.dart';
-// import '../services/theme_changer.dart';
-// import '../tabs/home_tab.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,7 +30,9 @@ class _HomePageState extends State<HomePage> {
         leading: Padding(
             padding: const EdgeInsets.only(left: 8),
             child: IconButton(
-              icon: Icon(Icons.menu_open),
+              // icon: Icon(Icons.menu_open),
+              icon: Icon(Icons.menu),
+
               tooltip: 'Configurações',
               onPressed: () {
                 Navigator.of(context)

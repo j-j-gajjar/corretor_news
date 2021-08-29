@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 import 'bookmark.dart';
 import 'category.dart';
-import 'news_screen.dart';
+import 'news/news_screen.dart';
 
 class TabView extends StatefulWidget {
   @override

@@ -33,19 +33,21 @@ class _SplashScreenState extends State<SplashScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(
-                child: Image.asset(
-                  'assets/images/logo.png',
-                  height: setContainerHeight(150),
-                  width: setContainerWidth(150),
+              Center(
+                child: Expanded(
+                  child: Image.asset(
+                    'assets/logo/logo_full.png',
+                    height: setContainerHeight(320),
+                    width: setContainerWidth(320),
+                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(60),
                 child: Image.asset(
                   'assets/images/newLoading.gif',
-                  height: setContainerHeight(150),
-                  width: setContainerWidth(150),
+                  height: setContainerHeight(60),
+                  width: setContainerWidth(60),
                 ),
               )
             ],

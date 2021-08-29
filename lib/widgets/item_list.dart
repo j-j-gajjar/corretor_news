@@ -19,6 +19,7 @@ class ItemList extends StatelessWidget {
               title: "Bitrix24",
               subtitle: "2 Meses Grátis",
               onpress: () {}
+
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(

@@ -155,7 +155,7 @@ class _TabComissaState extends State<TabComissa> {
                             ),
                             controller: _valorbruto,
                           ),
-                          SizedBox(
+                        SizedBox(
                             height: 20,
                           ),
                           TextFormField(

@@ -9,19 +9,19 @@ final TextTheme textTheme = TextTheme(
   headline2: GoogleFonts.ubuntu(fontSize: 48, fontWeight: FontWeight.w400),
   headline3: GoogleFonts.montserrat(
       fontSize: 36,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0.25,
       height: 1),
 
-  headline4: GoogleFonts.montserrat(
-      fontSize: 34,
-      fontWeight: FontWeight.w500,
+  headline4: GoogleFonts.openSans(
+      fontSize: 32,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0.25,
       height: 1),
 
-  headline5: GoogleFonts.montserrat(
+  headline5: GoogleFonts.openSans(
       fontSize: 30,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
       letterSpacing: 0.25,
       height: 1.2),
   headline6: GoogleFonts.ubuntu(

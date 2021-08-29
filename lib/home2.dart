@@ -1,7 +1,7 @@
 import 'package:corretor_news/pages/tabs/tab_indices.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'blog/app/screens/news_screen.dart';
+import 'blog/app/screens/news/news_screen.dart';
 import 'components/app_title_bar.dart';
 import 'indice_pages.dart';
 import 'theme/app_constants.dart';
@@ -82,7 +82,6 @@ class _HomePage2State extends State<HomePage2> {
     );
   }
 
-  @override
   Widget buil(BuildContext context) {
     return Scaffold(
       // resizeToAvoidBottomInset: false,

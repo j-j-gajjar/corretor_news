@@ -1,5 +1,8 @@
+import 'package:corretor_news/providers/theme_provider.dart';
+import 'package:corretor_news/theme/app_constants.dart';
 import 'package:corretor_news/theme/app_texts.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
 class ItemCard extends StatelessWidget {
@@ -15,8 +18,7 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This size provide you the total height and width of the screen
-    // double c_width = MediaQuery.of(context).size.width * 0.8;
+    final isThemeChange = Provider.of<ThemeProvider>(context);
 
     // Size size = MediaQuery.of(context).size;
     return InkWell(
@@ -30,18 +32,20 @@ class ItemCard extends StatelessWidget {
           height: 260,
           margin: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 20),
           decoration: BoxDecoration(
-            color: Colors.white,
+            // color: kBgLightColor,
+            color:
+                isThemeChange.mTheme == false ? Colors.white : Colors.grey[900],
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
                 offset: Offset(0, 4),
                 blurRadius: 20,
-                color: Color(0xFFB0CCE1).withOpacity(0.32),
+                // color: Color(0xFFB0CCE1).withOpacity(0.32),
               ),
             ],
           ),
           child: Material(
-            color: Colors.transparent,
+            // color: Colors.transparent,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: Column(

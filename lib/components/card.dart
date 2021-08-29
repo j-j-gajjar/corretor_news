@@ -9,7 +9,7 @@ Widget card(
     ),
     child: Container(
       width: width,
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 20),
+      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 16),
       decoration:
           BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(15))),
       child: child,

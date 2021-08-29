@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class WpApi {
-  static const api = "https://publicidadeimobiliaria.com/wp-json/wp/v2";
+  static const api = "https://dropsmd.tech/wp-json/wp/v2";
   static const listApi = "https://publicidadeimobiliaria.com/wp-json/wp/v2";
   static const headers = {"Accept": "application/json"};
 
@@ -56,7 +56,6 @@ class WpApi {
     return posts;
   }
 
-  // call for all Game articles
   Future<List<Posts>> fetchListPosts() async {
     // var response = await http.get(
     //   Uri.parse(listApi + "posts?_embed&categories=0"),

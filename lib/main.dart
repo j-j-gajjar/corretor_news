@@ -23,7 +23,7 @@ Future<void> main() async {
     DeviceOrientation.portraitDown,
   ]);
   runApp(
-    MultiProvider(
+MultiProvider(
       providers: [
         ChangeNotifierProvider.value(
           value: ThemeProvider(),

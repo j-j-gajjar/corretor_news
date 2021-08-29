@@ -1,0 +1,86 @@
+[
+  {
+    "taxaName": "IPC-M",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "0.83%",
+    "yearValue": "3.84%"
+  },
+  {
+    "taxaName": "IPC-DI",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "0.92%",
+    "yearValue": "4.21%"
+  },
+  {
+    "taxaName": "IPCA",
+    "subName": "IBGE",
+    "currentTime": "JUL/21",
+    "currentValue": "0.96%",
+    "yearValue": "4.50%"
+  },
+  {
+    "taxaName": "IPC",
+    "subName": "Fipe",
+    "currentTime": "JUL/21",
+    "currentValue": "1.02%",
+    "yearValue": "2.94%"
+  },
+  {
+    "taxaName": "INPC",
+    "subName": "IBGE",
+    "currentTime": "JUL/21",
+    "currentValue": "1.02%",
+    "yearValue": "4.73%"
+  },
+  {
+    "taxaName": "INCC-DI",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "0.85%",
+    "yearValue": "9.68%"
+  },
+  {
+    "taxaName": "INCC-M",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "1.24%",
+    "yearValue": "9.72%"
+  },
+  {
+    "taxaName": "IGP-10",
+    "subName": "FGV",
+    "currentTime": "AGO/21",
+    "currentValue": "1.18%",
+    "yearValue": "15.34%"
+  },
+  {
+    "taxaName": "IGP-DI",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "1.45%",
+    "yearValue": "12.65%"
+  },
+  {
+    "taxaName": "IGP-M",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "0.78%",
+    "yearValue": "13.08%"
+  },
+  {
+    "taxaName": "IPA-DI",
+    "subName": "FGV\"",
+    "currentTime": "JUL/21",
+    "currentValue": "1.65%",
+    "yearValue": "15.31%"
+  },
+  {
+    "taxaName": "IPA-M",
+    "subName": "FGV",
+    "currentTime": "JUL/21",
+    "currentValue": "0.71%",
+    "yearValue": "15.92%"
+  }
+]
