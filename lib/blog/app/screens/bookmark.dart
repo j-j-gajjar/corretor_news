@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'blog_View.dart';
+import 'news/blog_View.dart';
 
 class Bookmark extends StatefulWidget {
   @override

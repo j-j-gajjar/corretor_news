@@ -15,9 +15,9 @@ class ListConteudo extends StatelessWidget {
       child: Row(
         children: <Widget>[
           CardConteudo(
-              overtitle: 'MARKETING DIGITAL',
+              overtitle: 'MARKETING DIGITAL PT. 2',
               title: 'E-MAIL MARKETING',
-              subtitle: 'VOCÊ SABE O QUE É?',
+              subtitle: 'VOCÊ SABE O QUE É E COMO UTILIZAR ESSA ESTRATÉGIA?',
               icon: Icons.ac_unit,
               color1: Color(0xFF151575).withOpacity(0.8),
               color2: Color(0xFF151575).withOpacity(1),
@@ -25,7 +25,7 @@ class ListConteudo extends StatelessWidget {
           CardConteudo(
               overtitle: 'MARKETING DIGITAL',
               title: 'E-MAIL MARKETING',
-              subtitle: 'VOCÊ SABE O QUE É?',
+              subtitle: 'VOCÊ SABE O QUE É E COMO UTILIZAR ESSA ESTRATÉGIA?',
               icon: Icons.ac_unit,
               color1: Color(0xFF151575).withOpacity(0.8),
               color2: Color(0xFF151575).withOpacity(1),
@@ -33,7 +33,7 @@ class ListConteudo extends StatelessWidget {
           CardConteudo(
               overtitle: 'MARKETING DIGITAL',
               title: 'E-MAIL MARKETING',
-              subtitle: 'VOCÊ SABE O QUE É?',
+              subtitle: 'VOCÊ SABE O QUE É E COMO UTILIZAR ESSA ESTRATÉGIA?',
               icon: Icons.ac_unit,
               color1: Color(0xFF151575).withOpacity(0.8),
               color2: Color(0xFF151575).withOpacity(1),
@@ -44,6 +44,6 @@ class ListConteudo extends StatelessWidget {
   }
 }
 
-void goToOnTaxa(context) => Navigator.of(context).pushReplacement(
+void goToOnTaxa(context) => Navigator.of(context).push(
       MaterialPageRoute(builder: (_) => OnBoardingTaxa()),
     );

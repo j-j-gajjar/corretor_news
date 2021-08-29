@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 
-class ServicesCard extends StatelessWidget {
+class CardServicesLogo extends StatelessWidget {
   final String pngSrc;
   final Function press;
-  const ServicesCard({
+  const CardServicesLogo({
     Key? key,
     required this.pngSrc,
     required this.press,
@@ -28,7 +28,7 @@ class ServicesCard extends StatelessWidget {
           BoxShadow(
             offset: Offset(0, 4),
             blurRadius: 20,
-            color: Color(0xFFB0CCE1).withOpacity(0.32),
+            color: Color(0xFFB0CCE1).withOpacity(0.8),
           ),
         ],
       ),

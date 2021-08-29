@@ -22,90 +22,139 @@ class _HorizontalViewState extends State<HorizontalView> {
       builder: (_, AsyncSnapshot snapshot) {
         if (snapshot.connectionState == ConnectionState.done &&
             snapshot.hasData) {
-          return Container(
-            height: setContainerHeight(220),
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: snapshot.data.length,
-              itemBuilder: (_, index) {
-                Posts post = snapshot.data[index];
-                return InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) {
-                        return PostView(
-                          posts: post,
-                        );
-                      }),
-                    );
-                  },
-                  child: Column(
-                    children: <Widget>[
-                      post.image != null
-                          ? Container(
-                              width: setContainerWidth(250),
-                              height: setContainerHeight(150),
-                              margin: EdgeInsets.only(left: 20),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15.0),
+          return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: snapshot.data.length,
+            itemBuilder: (_, index) {
+              Posts post = snapshot.data[index];
+              return InkWell(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) {
+                      return PostView(
+                        posts: post,
+                      );
+                    }),
+                  );
+                },
+                child: Column(
+                  children: <Widget>[
+                    post.image != null
+                        ? Container(
+                            width: setContainerWidth(300),
+                            height: setContainerHeight(350),
+                            margin: EdgeInsets.symmetric(horizontal: 08),
+                            decoration: BoxDecoration(
+                                // border: Border.all(),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20))),
+                            child: CachedNetworkImage(
+                              imageUrl: '${post.image}',
+                              fit: BoxFit.cover,
+                              imageBuilder: (context, imageProvider) =>
+                                  Container(
+                                width: setContainerWidth(300),
+                                height: setContainerHeight(350),
+                                // margin: EdgeInsets.only(left: 20),
+                                // width: 80.0,
+                                // height: 80.0,
+                                decoration: BoxDecoration(
+                                  // shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(20)),
+                                  image: DecorationImage(
+                                      image: imageProvider, fit: BoxFit.cover),
                                 ),
                               ),
-                              child: CachedNetworkImage(
-                                imageUrl: '${post.image}',
+
+                              // width: setContainerWidth(300),
+                              // height: setContainerHeight(300),
+                              placeholder: (_, url) {
+                                return Image.asset(
+                                  'assets/images/newLoading.gif',
+                                  width: 10,
+                                  height: 10,
+                                );
+                              },
+                            ),
+                          )
+                        : Container(
+                            width: setContainerWidth(280),
+                            height: setContainerHeight(300),
+                            // margin: EdgeInsets.only(left: 20),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20.0),
+                              ),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  'assets/img_error.jpg',
+                                ),
                                 fit: BoxFit.cover,
-                                width: setContainerWidth(250),
-                                height: setContainerHeight(150),
-                                placeholder: (_, url) {
-                                  return Image.asset(
-                                    'assets/images/newLoading.gif',
-                                    width: 50,
-                                    height: 50,
-                                  );
-                                },
                               ),
-                            )
-                          : Container(
-                              width: setContainerWidth(250),
-                              height: setContainerHeight(150),
-                              margin: EdgeInsets.only(left: 20),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(15.0),
+                            ),
+                          ),
+                    Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      child: Container(
+                        // color: Colors.blue,
+                        height: setContainerHeight(160),
+                        width: setContainerWidth(270),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            children: [
+                              AutoSizeText(
+                                '${post.title}',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: setTextSize(18),
                                 ),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/img_error.jpg',
+                                maxLines: 3,
+                                minFontSize: 18,
+                                overflow: TextOverflow.ellipsis,
+                                softWrap: true,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFE3E3E3),
+                                      borderRadius: BorderRadius.circular(3),
+                                    ),
+                                    padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
+                                    margin: EdgeInsets.all(16),
+                                    child: Text(
+                                      '',
+                                      // displayTime(widget.posts!.time.toString())}',
+                                      // '',
+                                      // article.category,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                      ),
+                                    ),
                                   ),
-                                  fit: BoxFit.cover,
-                                ),
+                                  Icon(
+                                    Icons.bookmark_border,
+                                    size: 32,
+                                  ),
+                                ],
                               ),
-                            ),
-                      Expanded(
-                        child: Container(
-                          width: setContainerWidth(250),
-                          padding: EdgeInsets.only(left: 5.0),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AutoSizeText(
-                              '${post.title}',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: setTextSize(18),
-                              ),
-                              maxLines: 2,
-                              minFontSize: 15,
-                              overflow: TextOverflow.fade,
-                              softWrap: true,
-                            ),
+                            ],
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    ),
+                  ],
+                ),
+              );
+            },
           );
         } else if (snapshot.connectionState == ConnectionState.none) {
           return Center(
@@ -119,7 +168,7 @@ class _HorizontalViewState extends State<HorizontalView> {
                   height: 20.0,
                 ),
                 RefreshButton(
-                  text: 'Refresh',
+                  text: 'Recarregar',
                   onPressed: () {
                     setState(() {});
                   },
@@ -154,7 +203,7 @@ class _HorizontalViewState extends State<HorizontalView> {
                   ),
                 ),
                 RefreshButton(
-                  text: 'Refresh',
+                  text: 'Recarregar',
                   onPressed: () {
                     setState(() {});
                   },

@@ -11,12 +11,9 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
-  String devInfo = "Hi, I'm Godsend Joseph by name, I am a Flutter " +
-      "Developer, you can click on contact us to get my contacts";
+  String devInfo = "";
 
-  String aboutBlog = "NaijaTechGuy is a Nigerian Technology Website " +
-      "Focused on Publishing the latest news on technology, " +
-      "smartphones, gadgets and more related content";
+  String aboutBlog = "";
   @override
   Widget build(BuildContext context) {
     final isThemeChange = Provider.of<ThemeProvider>(context);

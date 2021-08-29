@@ -1,10 +1,12 @@
+import 'package:corretor_news/pages/tabs/info_screen.dart';
 import 'package:corretor_news/pages/tabs/onboarding/onboarding_taxas.dart';
 import 'package:corretor_news/widgets/services_card.dart';
 import 'package:flutter/material.dart';
 
-import 'card_conteudo.dart';
-
 class ServicesList extends StatelessWidget {
+  void goToServiceDetails(context) => Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => InfoScreen()),
+      );
   const ServicesList({
     Key? key,
   }) : super(key: key);
@@ -15,26 +17,16 @@ class ServicesList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: <Widget>[
-          ServicesCard(pngSrc: ("assets/logo/bitrix24.png"), press: () {}
-              //   Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) {
-              //         return DetailsScreen();
-              //       },
-              //     ),
-              //   );
-              // },
-              ),
-          ServicesCard(
+          CardServicesLogo(pngSrc: ("assets/logo/logo.png"), press: () {}),
+          CardServicesLogo(pngSrc: ("assets/logo/acampaing.png"), press: () {}),
+          CardServicesLogo(
+              pngSrc: ("assets/logo/docusign.png"),
+              press: () => goToServiceDetails(context)),
+          CardServicesLogo(
             pngSrc: ("assets/logo/bling.png"),
             press: () {},
           ),
-          ServicesCard(
-            pngSrc: ("assets/logo/leadlovers.png"),
-            press: () {},
-          ),
-          ServicesCard(
+          CardServicesLogo(
               pngSrc: ("assets/logo/mlabs.png"),
               // press: () {}
               press: () {
@@ -69,6 +61,7 @@ class ServicesListS extends StatelessWidget {
           //     color2: Color(0xFFC14545).withOpacity(1),
           //     onPressed: () {}),
           ServicesCardS(pngSrc: ("assets/logo/bitrix24.png"), press: () {}
+
               //   Navigator.push(
               //     context,
               //     MaterialPageRoute(

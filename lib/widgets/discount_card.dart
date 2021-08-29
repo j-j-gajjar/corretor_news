@@ -24,7 +24,7 @@ class CardWide extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/real-estate01.png'),
+                image: AssetImage('assets/images/researching.png'),
               ),
             ),
             child: DecoratedBox(
@@ -33,7 +33,7 @@ class CardWide extends StatelessWidget {
                 gradient: LinearGradient(
                   colors: [
                     Color(0xFF00002D).withOpacity(1),
-                    Color(0xFF222265).withOpacity(0.6),
+                    Color(0xFF222265).withOpacity(0.7),
                   ],
                 ),
               ),
@@ -69,8 +69,9 @@ class CardWide extends StatelessWidget {
                                 TextSpan(
                                   text: "60% OFF",
                                   style: TextStyle(
-                                    fontSize: 54,
-                                    fontWeight: FontWeight.bold,
+                                    fontSize: 58,
+                                    color: Colors.white60,
+                                    fontWeight: FontWeight.w900,
                                   ),
                                 ),
                               ],
