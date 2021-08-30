@@ -112,7 +112,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Avenca Digital"/><br>
+        <img src="assets/avenca_digital.png"/><br>
         <sub>
           <b>Avenca Digital</b>
         </sub>
