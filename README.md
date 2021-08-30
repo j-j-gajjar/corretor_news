@@ -16,6 +16,12 @@
 
 
 
+
+
+
+
+
+
 # Corretor News App - O App do Corretor de Imóveis
 
 > V. 3.0.5
