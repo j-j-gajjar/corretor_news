@@ -23,6 +23,13 @@ Tab News
 - [ ] Corrigir "Loading" constante do conteúdo
 - [ ] Armazenar cache/update apenas forçando push/pull
 
+
+Post View 
+- [ ] Change Letter Size
+- [ ] Corrigir Share
+- [ ] Corrigir Url -->
+
+
 Tab Comissa
 - [ ] Corrigir Void (Botão: "Calcular")
 - [ ] Definir/corrigir botão "Share"
