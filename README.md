@@ -4,7 +4,7 @@
 
 
 
-![Image](corretor_news/assets/icon.png)
+![Image](assets/icon.png)
 
 
 
