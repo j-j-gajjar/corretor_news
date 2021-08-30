@@ -39,10 +39,7 @@ Tab Índices
 Tab Cursos
 - [ ] Corrigir Cards
 - [ ] Definir Conteúdos
-- [ ] 
-- [ ] 
-- [ ]  
-- [ ] 
+
 
 
 
