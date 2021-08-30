@@ -58,24 +58,15 @@ class _CourseCatalogState extends State<CourseCatalog> {
         children: <Widget>[
           Header(),
           Padding(
-            padding: EdgeInsets.all(Constants.mainPadding),
+            padding: EdgeInsets.all(24),
             child: ListView(
               scrollDirection: Axis.vertical,
               children: <Widget>[
-                // SizedBox(height: Constants.mainPadding * 2),
-
-                // Text(
-                //   "Invista em\nvocê!",
-                //   style: TextStyle(
-                //       fontSize: 40,
-                //       fontWeight: FontWeight.w900,
-                //       color: Colors.white),
-                // ),
                 Text(
                   "Invista em",
                   style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.w900,
+                      fontSize: 38,
+                      fontWeight: FontWeight.w600,
                       color: Colors.white),
                 ),
                 AnimatedTextKit(animatedTexts: [
@@ -85,25 +76,19 @@ class _CourseCatalogState extends State<CourseCatalog> {
                           fontSize: 36,
                           fontWeight: FontWeight.w900,
                           color: Colors.white)),
-                  TyperAnimatedText('conhecimento!',
+                  TyperAnimatedText('conhecimento',
                       speed: const Duration(milliseconds: 400),
                       textStyle: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.w900,
                           color: Colors.white)),
-                  TyperAnimatedText('capacitação!',
+                  TyperAnimatedText('capacitação',
                       speed: const Duration(milliseconds: 400),
                       textStyle: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.w900,
                           color: Colors.white)),
-                  TyperAnimatedText('evolução!',
-                      speed: const Duration(milliseconds: 400),
-                      textStyle: TextStyle(
-                          fontSize: 36,
-                          fontWeight: FontWeight.w900,
-                          color: Colors.white)),
-                  TyperAnimatedText('educação!',
+                  TyperAnimatedText('educação',
                       speed: const Duration(milliseconds: 400),
                       textStyle: TextStyle(
                           fontSize: 36,
@@ -111,7 +96,7 @@ class _CourseCatalogState extends State<CourseCatalog> {
                           color: Colors.white)),
                 ]),
 
-                SizedBox(height: 40),
+                SizedBox(height: 30),
 
                 Stack(
                   children: <Widget>[
@@ -127,9 +112,10 @@ class _CourseCatalogState extends State<CourseCatalog> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "OFERTA DO DIA!",
+                            "OFERTA \n\DO DIA!",
                             style: TextStyle(
-                                fontSize: 28,
+                                fontFamily: 'Montserrat',
+                                fontSize: 32,
                                 fontWeight: FontWeight.w900,
                                 color: Constants.textDark),
                           ),
@@ -138,61 +124,92 @@ class _CourseCatalogState extends State<CourseCatalog> {
 
                           // Categories Button
                           Container(
-                            width: 150,
-                            child: FlatButton(
-                              padding: EdgeInsets.all(10.0),
-                              color: Constants.salmonMain,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: <Widget>[
-                                  Expanded(
-                                    child: Center(
-                                      child: Text(
-                                        "SAIBA MAIS",
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
+                              width: 150,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  // Navigate to Learning
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CategoryScreen()),
+                                  );
+                                },
+                                child: Text(
+                                  'SAIBA MAIS',
+                                  style: TextStyle(fontSize: 18),
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  elevation: 10,
+                                  padding: EdgeInsets.symmetric(vertical: 16),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(12), // <-- Radius
                                   ),
-                                  Icon(Icons.arrow_forward,
-                                      color: Colors.white, size: 16),
-                                ],
-                              ),
-                              shape: new RoundedRectangleBorder(
-                                borderRadius: new BorderRadius.circular(13.0),
-                              ),
-                              onPressed: () {
-                                // Navigate to Learning
-                                debugPrint("Pressed here");
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => CategoryScreen()),
-                                );
-                              },
-                            ),
-                          )
+                                ),
+                              )
+
+                              // FlatButton(
+                              //   padding: EdgeInsets.all(16.0),
+                              //   color: Constants.salmonMain,
+                              //   child: Row(
+                              //     mainAxisAlignment: MainAxisAlignment.start,
+                              //     children: <Widget>[
+                              //       Expanded(
+                              //         child: Center(
+                              //           child: Text(
+                              //             "SAIBA MAIS",
+                              //             style: TextStyle(color: Colors.white),
+                              //           ),
+                              //         ),
+                              //       ),
+                              //       Icon(Icons.arrow_forward,
+                              //           color: Colors.white, size: 30),
+                              //     ],
+                              //   ),
+                              //   shape: new RoundedRectangleBorder(
+                              //     borderRadius: new BorderRadius.circular(13.0),
+                              //   ),
+                              //   onPressed: () {
+                              //     // Navigate to Learning
+                              //     debugPrint("Pressed here");
+                              //     Navigator.push(
+                              //       context,
+                              //       MaterialPageRoute(
+                              //           builder: (context) => CategoryScreen()),
+                              //     );
+                              //   },
+                              // ),
+                              )
                         ],
                       ),
                     ),
 
                     // Image Researching Girl
+                    // Positioned(
+                    //   right: -40,
+                    //   bottom: 0,
+                    //   child: Image.asset(
+                    //     "assets/images/researching.png",
+                    //     width: 280,
+                    //     height: 120,
+                    //   ),
+                    // ),
                     Positioned(
                       right: -40,
                       bottom: 0,
                       child: Image.asset(
-                        "assets/images/researching.png",
-                        width: 200,
-                        height: 104,
+                        "assets/images/oferta.png",
+                        width: 250,
+                        height: 200,
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height: 20.0),
+                SizedBox(height: 80.0),
 
                 Text("Cursos recomendados:",
                     style: TextStyle(
-                      color: Colors.white,
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     )),
@@ -208,18 +225,31 @@ class _CourseCatalogState extends State<CourseCatalog> {
                   shrinkWrap: true,
                   children: <Widget>[
                     CardCourses(
-                      image: Image.asset("assets/images/icon_1.png",
-                          width: 40, height: 40),
-                      color: Color(0xFFCBE1F0),
-                      title: "Tour Virtual 3D",
-                      hours: "10 módulos + 4 Bônus",
+                      image: Image.asset("assets/images/trilha.png",
+                          width: 100, height: 100),
+                      color: Color(0xFFFFF9F9),
+                      title: "Trilha Financeira",
+                      subtitle: "Serasa + Descomplica",
+                      hours:
+                          "Tudo o que você sempre quis saber para organizar sua vida financeira em um curso 100% gratuito e na palma da sua mão.",
                     ),
                     SizedBox(height: 20.0),
                     CardCourses(
-                      image: Image.asset("assets/images/icon_2.png",
+                      image: Image.asset("assets/images/eadcreci2.png",
+                          width: 100, height: 100),
+                      color: Color(0xFFFFF9F9),
+                      title: "CRECI - EAD",
+                      subtitle: "CRECI",
+                      hours:
+                          "Para se destacar no mercado imobiliário a atualização profissional é essencial! Conheça a plataforma EAD do CRECI",
+                    ),
+                    SizedBox(height: 20.0),
+                    CardCourses(
+                      image: Image.asset("assets/images/icon_3.png",
                           width: 40, height: 40),
-                      color: Constants.lightYellow,
-                      title: "Sketch shortcuts and tricks",
+                      color: Constants.lightViolet,
+                      title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     SizedBox(height: 20.0),
@@ -228,6 +258,7 @@ class _CourseCatalogState extends State<CourseCatalog> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     SizedBox(height: 20.0),
@@ -236,6 +267,7 @@ class _CourseCatalogState extends State<CourseCatalog> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     SizedBox(height: 20.0),
@@ -244,14 +276,7 @@ class _CourseCatalogState extends State<CourseCatalog> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
-                      hours: "10 hours, 19 lessons",
-                    ),
-                    SizedBox(height: 20.0),
-                    CardCourses(
-                      image: Image.asset("assets/images/icon_3.png",
-                          width: 40, height: 40),
-                      color: Constants.lightViolet,
-                      title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                   ],

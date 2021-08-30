@@ -5,6 +5,7 @@ import 'package:corretor_news/widgets/card_conteudo.dart';
 import 'package:corretor_news/widgets/discount_card.dart';
 import 'package:corretor_news/widgets/services_list.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'onboarding/onboarding_page.dart';
 import 'onboarding/onboarding_taxas.dart';
@@ -41,15 +42,26 @@ class TabCursos extends StatelessWidget {
             ),
           ),
           SizedBox(height: 16),
-          CardConteudo(
-              overtitle: 'FERRAMENTAS',
+          CardWideIcon(
+              overtitle: 'EDUCAÇÃO',
               title: 'CURSOS',
-              subtitle: 'CURSOS SELECIONADOS PARA VOCÊ',
-              icon: Icons.ac_unit,
+              subtitle: 'ESCOLHA O SEU E MATRICULE-SE AGORA MESMO!',
+              icon: FontAwesomeIcons.book,
               color1: Color(0xFFCA1919).withOpacity(0.8),
               color2: Color(0xFFC14545).withOpacity(1),
               onPressed: () => goToCourseDetails(context)),
           // onPressed: () => goToOnTaxa(context)),
+          SizedBox(height: 16),
+          CardWideIcon(
+              overtitle: 'EDUCAÇÃO',
+              title: 'DICAS',
+              subtitle: 'DICAS PARA TER SUCESSO COMO CORRETOR',
+              icon: FontAwesomeIcons.chartLine,
+              color1: Color(0xFF1AB394).withOpacity(0.8),
+              color2: Color(0xFF19ACCA).withOpacity(1),
+              onPressed: () => goToCourseDetails(context)),
+          // onPressed: () => goToOnTaxa(context)),
+          SizedBox(height: 16),
           Padding(
             padding:
                 const EdgeInsets.only(left: 32, right: 32, bottom: 4, top: 60),
