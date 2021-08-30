@@ -123,6 +123,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightPink,
                       title: "Adobe XD Prototyping",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     CardCourses(
@@ -130,6 +131,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightYellow,
                       title: "Sketch shortcuts and tricks",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     CardCourses(
@@ -137,6 +139,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     CardCourses(
@@ -144,6 +147,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     CardCourses(
@@ -151,6 +155,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                     CardCourses(
@@ -158,6 +163,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           width: 40, height: 40),
                       color: Constants.lightViolet,
                       title: "UI Motion Design in After Effects",
+                      subtitle: "Serasa + Descomplica",
                       hours: "10 hours, 19 lessons",
                     ),
                   ],

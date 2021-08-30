@@ -2,6 +2,7 @@ import 'package:corretor_news/theme/app_constants.dart';
 import 'package:corretor_news/widgets/card_coin.dart';
 import 'package:corretor_news/widgets/card_indices.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
   runApp(TabIndices());
@@ -55,9 +56,14 @@ class _TabIndicesState extends State<TabIndices> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Indicadores:', style: TextStyle(fontSize: 20)),
+                Text('Indicadores',
+                    style: TextStyle(fontSize: 24, letterSpacing: 1)),
+                SizedBox(width: 20),
                 Row(children: [
-                  Icon(Icons.keyboard_arrow_down, color: Colors.black45),
+                  FaIcon(
+                    FontAwesomeIcons.chartLine,
+                    size: 20,
+                  ),
                 ])
               ],
             ),
