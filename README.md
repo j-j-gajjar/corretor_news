@@ -1,7 +1,10 @@
 # Corretor News App - O App do Corretor de Imóveis
 
-[Corretor News](https://github.com/gzpaitch/corretor_news/blob/master/assets/icon.png)
+[Corretor News](https://github.com/gzpaitch/)
 
+
+
+![Image](corretor_news/blob/master/assets/icon.png)
 
 
 
