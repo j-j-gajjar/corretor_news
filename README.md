@@ -7,9 +7,6 @@
 
 
 
-# Corretor News App - O App do Corretor de Imóveis
-
-
 ![Image](assets/ezgif.com-gif-maker.gif)
 
 
@@ -17,7 +14,7 @@
 
 <img src="exemplo-image.png" alt="">
 
-
+# Corretor News App - O App do Corretor de Imóveis
 
 > V. 3.0.5
 
