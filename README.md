@@ -7,12 +7,14 @@
 
 
 
-![Image](assets/ezgif.com-gif-maker.gif)
+![Image](android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png)
 
 
 
 
-<img src="exemplo-image.png" alt="">
+
+
+
 
 # Corretor News App - O App do Corretor de Imóveis
 
