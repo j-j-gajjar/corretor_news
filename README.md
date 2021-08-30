@@ -10,15 +10,44 @@
 
 > Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
 
+
+
+V. 3.0.5
+
+
+
+
 ### Ajustes e melhorias
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+Tab News
+- [ ] Vertical View
+- [ ] Bookmark
+- [ ] Definir Categorias [WordPress]
+- [ ] Corrigir "Loading" constante do conteúdo
+- [ ] Armazenar cache/update apenas forçando push/pull
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+Tab Comissa
+- [ ] Corrigir Void (Botão: "Calcular")
+- [ ] Definir/corrigir botão "Share"
+- [ ] Slider --> Porcentagem (%) 
+
+Tab Índices
+- [ ] Definir Builder (JSON)
+- [ ] Definir/carregar Http/Json Local 
+- [ ] Widget "Card" Padrão
+- [ ] Parse --> Índices/inflação/IPEA 
+- [ ] Parse --> Moedas (Dólar/Euro/Bitcoin)
+
+
+Tab Cursos
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ]  
+- [ ] 
+
+
+
 
 ## 💻 Pré-requisitos
 

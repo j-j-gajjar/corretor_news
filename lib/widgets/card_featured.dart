@@ -117,7 +117,7 @@ class _CardFeaturedPostState extends State<CardFeaturedPost> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         // color: Colors.white.withOpacity(0.8),
-                        elevation: 5,
+                        elevation: 08,
                         child: Container(
                           // color: Colors.blue,
                           height: setContainerHeight(140),
