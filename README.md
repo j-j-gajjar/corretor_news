@@ -10,7 +10,7 @@
 # Corretor News App - O App do Corretor de Imóveis
 
 
-![Image](assets/icon.png)
+![Image](assets/ezgif.com-gif-maker.gif)
 
 
 
